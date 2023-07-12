@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -9,21 +8,22 @@
  * Return: Num of characters printed
  */
 
-int print_int(int input)
+int _get_int(va_list ap)
 {
-	int tmp;
-	int i;
+	unsigned int nbytes = 0;
+	unsigned int i = va_arg(ap, unsigned int);
+	return (_print_int(i, nbytes));
+}
 
-	if (input == 0)
+int _print_int(unsigned int i, unsigned int nbytes)
+{
+	if (i % 10 == 0)
 	{
-		i = 0;
-		return (i);
+		return (nbytes * 4);
 	}
 
-	tmp = (input % 10) + 48;
-	i = print_int(input / 10);
-	putchar(tmp);
-	i++;
-
-	return (i);
+	_putchar((i % 10) + 48);
+	i = i / 10;
+	nbytes++;
+	return (_print_int(i, nbytes));
 }

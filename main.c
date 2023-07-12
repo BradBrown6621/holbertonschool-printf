@@ -4,11 +4,7 @@
 
 int main(void)
 {
-	int test = INT_MAX;
-
-	test = print_int(test);
-
-	printf("\n%i", test);
+	int test = _printf("%i\n", 123, "string", 's');
 
 	return (test);
 }
