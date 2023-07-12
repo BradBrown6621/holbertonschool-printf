@@ -9,5 +9,5 @@ int _put_arg_s(va_list ap)
 	{
 		_putchar(s[i]);
 	}
-	    return (i);
+	return (i);
 }

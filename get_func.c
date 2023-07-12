@@ -5,8 +5,7 @@ int (*get_func(char s))(va_list ap)
 {
 	int i = 0;
 
-	spec_t functions[] =
-	{
+	spec_t functions[] = {
 		{"c", _put_arg_c},
 		{"s", _put_arg_s},
 		{"%", _put_arg_c},
