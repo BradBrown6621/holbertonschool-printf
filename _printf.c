@@ -9,20 +9,31 @@
  * Return: <insert return value>
  */
 
-int _printf(char *s, ...)
+int _printf(char *format, ...)
 {
-	int argsn = _strlen(s);
+	int argsn = _strlen(format);
 	int i = 0;
+	char c;
+	int nchars = 0;
 	va_list ap;
 
-	va_start(ap, s);
+	va_start(ap, format);
 
 	for (i = 0; i < argsn; i++)
 	{
-		_putchar(s[i]);
+		if (format[i] == '%')
+		{
+			i++;
+			c = format[i];
+			nchars = nchars + (*get_func(c))(ap);
+		} else
+		{
+			_putchar(format[i]);
+			nchars++;
+		}
 	}
 
 	va_end(ap);
 
-	return (i);
+	return (nchars);
 }

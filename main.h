@@ -11,7 +11,7 @@ typedef struct specifiers
 	int (*func)(va_list);
 } spec_t;
 
-int _printf(char *string, ...);
+int _printf(char *format, ...);
 int (*get_func(char))(va_list);
 int _strlen(const char *s);
 

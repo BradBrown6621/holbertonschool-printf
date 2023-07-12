@@ -17,13 +17,12 @@ int _get_int(va_list ap)
 
 int _print_int(unsigned int i, unsigned int nbytes)
 {
-	if (i % 10 == 0)
+	if (i % 10 <= 0)
 	{
 		return (nbytes * 4);
 	}
-
-	_putchar((i % 10) + 48);
-	i = i / 10;
 	nbytes++;
-	return (_print_int(i, nbytes));
+	_print_int((i / 10), nbytes);
+	_putchar((i % 10) + 48);
+	return (nbytes);
 }
