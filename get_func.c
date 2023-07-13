@@ -29,7 +29,7 @@ int (*get_func(char s))(va_list ap)
 	}
 	_putchar(37);
 	_putchar(s);
-	return (functions[4].func);
+	return (functions[5].func);
 }
 
 int invalid_spec(va_list ap)

@@ -4,8 +4,8 @@
 
 int main(void)
 {
-	int test = _printf("%i\n", 0);
-	int test2 = printf("%i\n", 0);
+	int test = _printf("%!\n", 0);
+	int test2 = printf("%!\n", 0);
 	printf("%i\n", test2);
 	return (test);
 }
