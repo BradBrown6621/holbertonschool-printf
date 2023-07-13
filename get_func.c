@@ -8,6 +8,7 @@ int (*get_func(char s))(va_list ap)
 	spec_t functions[] = {
 		{"c", _put_arg_c},
 		{"s", _put_arg_s},
+		{"d", _get_int},
 		{"i", _get_int},
 		{"%", _put_arg_perc},
 		{NULL, invalid_spec},
