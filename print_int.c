@@ -24,15 +24,17 @@ int _print_int(int i, int nbytes)
 		i = (i + 1) * -1;
 		overflowBuffer = 1;
 		_putchar(45);
+		nbytes++;
 	}
 		
 	if (i / 10 <= 0)
 	{
 		_putchar(i + 48);
-		return (nbytes * 4);
+		nbytes++;
+		return (nbytes);
 	}
 	nbytes++;
-	_print_int((i / 10), nbytes);
+	nbytes = _print_int((i / 10), nbytes);
 	_putchar((i % 10) + overflowBuffer + 48);
 	return (nbytes);
 }

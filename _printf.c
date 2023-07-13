@@ -40,6 +40,5 @@ int _printf(char *format, ...)
 	}
 
 	va_end(ap);
-
 	return (nchars);
 }
