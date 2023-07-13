@@ -29,9 +29,14 @@ int _print_int(int i, int nbytes)
 		
 	if (i / 10 <= 0)
 	{
-		_putchar(i + 48);
+		_putchar(i + 48 + overflowBuffer);
 		nbytes++;
 		return (nbytes);
+	}
+	if (i == 0 && overflowBuffer != 1)
+	{
+		_putchar(48);
+		nbytes++;
 	}
 	nbytes++;
 	nbytes = _print_int((i / 10), nbytes);
