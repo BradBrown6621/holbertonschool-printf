@@ -8,10 +8,10 @@ int (*get_func(char s))(va_list ap)
 	spec_t functions[] = {
 		{"c", _put_arg_c},
 		{"s", _put_arg_s},
+		{"%", _put_arg_c},
 		{"i", _get_int},
 		{"%", _put_arg_perc},
-		{NULL, invalid_spec},
-		{NULL, _null}
+		{NULL, invalid_spec}
 	};
 
 	while ((functions[i]).s != NULL)
@@ -22,13 +22,9 @@ int (*get_func(char s))(va_list ap)
 		}
 		i++;
 	}
-	if (s == '\0')
-	{
-		return (functions[i + 1].func);
-	}
 	_putchar(37);
 	_putchar(s);
-	return (functions[4].func);
+	return (functions[3].func);
 }
 
 int invalid_spec(va_list ap)
@@ -38,13 +34,4 @@ int invalid_spec(va_list ap)
 		return (2);
 	}
 	return (2);
-}
-
-int _null(va_list ap)
-{
-	if (ap)
-	{
-		return (-1);
-	}
-	return (-1);
 }

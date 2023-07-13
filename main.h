@@ -16,11 +16,14 @@ int (*get_func(char))(va_list);
 int _strlen(const char *s);
 
 int _putchar(char c);
+int _puts(char *);
 int _put_arg_c(va_list);
 int _put_arg_s(va_list);
+int _put_arg_perc(va_list);
 int _get_int(va_list);
 int _print_int(unsigned int, unsigned int);
 
 int invalid_spec(va_list);
+int _null(va_list);
 
 #endif

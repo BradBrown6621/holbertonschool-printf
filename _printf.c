@@ -11,12 +11,18 @@
 
 int _printf(char *format, ...)
 {
-	int argsn = _strlen(format);
+	int argsn;
 	int i = 0;
 	char c;
 	int nchars = 0;
 	va_list ap;
 
+	if (format == NULL)
+	{
+		return(-1);
+	}
+
+	argsn = _strlen(format);
 	va_start(ap, format);
 
 	for (i = 0; i < argsn; i++)
