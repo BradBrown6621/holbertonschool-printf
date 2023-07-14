@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * _get_int - Pulls va_arg(integer) from va_list
  *
- * <@parameters go here>: Description
+ * @ap: The va_list ap from _printf
  *
- * Return: Num of characters printed
+ * Return: The result of _print_int
  */
 
 int _get_int(va_list ap)
@@ -16,9 +16,20 @@ int _get_int(va_list ap)
 	return (_print_int(i, nbytes));
 }
 
+/**
+ * _print_int - Prints an integer value to the standard output
+ *
+ * @i: The integer arguement to be printed
+ *
+ * @nbytes: The number of bytes printed
+ *
+ * Return: nbytes ALWAYS
+ */
+
 int _print_int(int i, int nbytes)
 {
 	int overflowBuffer = 0;
+
 	if (i < 0)
 	{
 		i = (i + 1) * -1;
@@ -26,7 +37,7 @@ int _print_int(int i, int nbytes)
 		_putchar(45);
 		nbytes++;
 	}
-		
+
 	if (i / 10 <= 0)
 	{
 		_putchar(i + 48 + overflowBuffer);

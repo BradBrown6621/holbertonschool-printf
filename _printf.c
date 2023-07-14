@@ -2,11 +2,11 @@
 #include "main.h"
 
 /**
- * <function name goes here> - Entry point
+ * _printf - Prints a formatted string to the standard output
  *
- * <@parameters go here>: Description
+ * @format: Format for the string to be printed
  *
- * Return: <insert return value>
+ * Return: Number of bytes printed on success, a negative number on failure
  */
 
 int _printf(char *format, ...)
@@ -19,7 +19,7 @@ int _printf(char *format, ...)
 
 	if (format == NULL)
 	{
-		return(-1);
+		return (-1);
 	}
 
 	argsn = _strlen(format);

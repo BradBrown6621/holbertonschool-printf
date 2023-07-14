@@ -5,6 +5,16 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**
+ * struct specifiers - The format for spec_t's struct
+ *
+ * @s: A character used as a specifier
+ * @func: A pointer to the necessary function used to print va_arg
+ *
+ * Description: This struct is used to format the elements in spec_t's
+ *		struct later in the program.
+ */
+
 typedef struct specifiers
 {
 	char *s;
@@ -24,6 +34,6 @@ int _get_int(va_list);
 int _print_int(int, int);
 
 int invalid_spec(va_list);
-int _null(va_list);
+int is_null(va_list);
 
 #endif
