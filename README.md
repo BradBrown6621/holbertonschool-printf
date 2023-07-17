@@ -1,14 +1,17 @@
 # _printf
 
-# A stripped-down version of the C function "printf"
+## A stripped-down version of the C function "printf"
   
 This project was part of my studies at Holberton to understand the functionality of variadic functions. Each student created their own version of printf. Here is my rendition!
 
 This function is a variadic function that takes as its arguments the named argument "format", a format string used by _printf to print values or variables to the standard output, followed by a variable number of arguments, those of which will replace specifiers found in the format string. Specifiers are always denoted by a "%" followed by the following specifier characters:
 
 i, d - An integer value (such as 4)
+
 c - A character (such as "d")
+
 s - A string (such as "Hello")
+
 % - A literal percent sign
 
 _printf will iteratively print the format string until it reaches a specifier, then fetches the next arguement and prints that argument in place of the specifier.
